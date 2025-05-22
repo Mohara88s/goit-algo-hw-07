@@ -69,10 +69,10 @@ def get_min_in_node(node):
     return node.val  # Повернути значення найменшого вузла
 
 # Функція отримання суми значень вузла і всіх його нащадків
-def sum_el_in_node(node):
+def sum_in_node(node):
     if not node:
         return 0
-    return node.val + sum_el_in_node(node.left) + sum_el_in_node(node.right)
+    return node.val + sum_in_node(node.left) + sum_in_node(node.right)
 
 # Test
 root = Node(5)
@@ -98,5 +98,5 @@ search_8 = search(root, 8)
 print(f'Найменше значення у вузлі {search_8.val} нашого дерева - {get_min_in_node(search_8)}')
 
 # Знаходження суми всіх значень в дереві і в конкретному вузлі
-print(f'Сума значень в нашому дереві - {sum_el_in_node(root)}')
-print(f'Сума значень у вузлі {search_3.val} нашого дерева - {sum_el_in_node(search_3)}')
+print(f'Сума значень в нашому дереві - {sum_in_node(root)}')
+print(f'Сума значень у вузлі {search_3.val} нашого дерева - {sum_in_node(search_3)}')
